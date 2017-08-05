@@ -1,3 +1,4 @@
+<!--META:{"hellow":"world"}-->
 <!DOCTYPE html>
 <html>
   <head>
@@ -134,5 +135,9 @@
         <!--Source: Freebase (http://www.freebase.com/), licensed under CC-BY (https://creativecommons.org/licenses/by/2.5/)-->
       </div>
     </div>
+
+    <script>
+      document.body.insertBefore(document.createTextNode(document.childNodes[0].data), document.body.childNodes[0]);
+    </script>
   </body>
 </html>
