@@ -1,5 +1,5 @@
-<!--[if !IE]>META:{"hellow":"world"}<![endif]-->
 <!DOCTYPE html>
+<!--META:{"hellow":"world"}-->
 <html>
   <head>
     <title>Yelp &amp; Open Source</title>
@@ -137,7 +137,12 @@
     </div>
 
     <script>
-      document.body.insertBefore(document.createTextNode(document.childNodes[0].data), document.body.childNodes[0]);
+      for (var index = 0; index < document.childNodes.length; index++) {
+        var node = document.childNodes[index];
+        if (node.nodeType === Node.COMMENT_NODE) {
+          document.body.insertBefore(document.createTextNode(node.data), document.body.childNodes[0]);
+        }
+      }
     </script>
   </body>
 </html>
